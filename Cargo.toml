@@ -1,0 +1,40 @@
+[package]
+name = "unisys-rs"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-web = "4.4.1"
+chrono = "0.4.31"
+color-eyre = "0.6.2"
+diesel = { version = "2.1.4", features = [ "chrono", "sqlite", "r2d2", "uuid", "without-deprecated" ] }
+env_logger = "0.10.1"
+lazy_static = "1.4.0"
+log = "0.4.20"
+serde = { version = "1.0.193", features = ["derive"] }
+toml = "0.8.8"
+
+[dev-dependencies]
+cargo-watch = "8.4.1"
+
+[package.metadata.watch]
+command = "run"
+ignore = ["target"]
+watch = ["src/**/*"]
+
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 3
+debug = false
+strip = true
+debug-assertions = false
+overflow-checks = false
+lto = true
+panic = "abort"
+incremental = false
+codegen-units = 1
+rpath = false

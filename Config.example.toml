@@ -1,0 +1,20 @@
+[api]
+host = "0.0.0.0"
+port = 8000
+url = "0.0.0.0"
+
+[db]
+dbms = "sqlite"
+name = ""
+
+[email]
+name = ""
+user = ""
+pass = ""
+smtp = "smtp.gmail.com"
+
+
+[volumes]
+# Local: ./volumes
+# Docker: /mnt/volumes
+path = "./volumes"

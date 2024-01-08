@@ -1,0 +1,7 @@
+.cargo/
+.git/
+.github
+target/
+tests/
+volumes/
+*.db
